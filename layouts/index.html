@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dummy Content</title>
+    {{ partial "head.html" . }}
+  </head>
+
+  <body>
+    <main>
+      <h1>Single-page timeline theme</h1>
+      {{ range.Data.Pages }}
+      {{ if eq .Type "event" }}
+      {{ .Title }}
+      {{ .Content }}
+      {{ .Params.event_image }}
+      <img src={{ "images/birthday-cake.jpg" | absURL }} />
+      {{ end }}
+      {{ end }}
+    </main>
+  </body>
+</html>
