@@ -3,6 +3,9 @@
 
 {{ .Hugo.Generator }}
 
+{{ $style := resources.Get "main.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+
 <link rel="stylesheet" href="{{ "css/styles.css" | absURL }}">
 
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | absURL }}">
