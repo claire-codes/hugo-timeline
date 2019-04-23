@@ -11,12 +11,11 @@
     <main>
       <h1>Single-page timeline theme</h1>
       {{ range.Data.Pages }}
-      {{ if eq .Type "event" }}
-      <h1>{{ .Title }}</h1>
-      {{ .Content }}
-      {{ .Params.event_image }}
-      <img src={{ "images/birthday-cake.jpg" | absURL }} />
-      {{ end }}
+        {{ if eq .Type "event" }}
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+            <img src={{ print "images/" .Params.event_image | absURL }} />
+        {{ end }}
       {{ end }}
     </main>
   </body>
