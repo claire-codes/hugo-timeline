@@ -1,5 +1,7 @@
-body {
-    h1 {
-        color: blue;
-    }
-}
+@import 'partials/_fonts';
+@import 'partials/_colors';
+@import 'partials/_variables';
+
+@import 'partials/_normalise';
+
+@import 'partials/timeline';
